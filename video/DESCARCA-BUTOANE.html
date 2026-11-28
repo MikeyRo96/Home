@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ro">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Descarca - analiza video</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--tx:#e6edf3;--mut:#8b949e;--acc:#2ea043;--acc2:#1f6feb}
+  *{box-sizing:border-box}
+  body{margin:0;padding:32px 20px;background:var(--bg);color:var(--tx);
+       font:16px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:-.3px}
+  .sub{color:var(--mut);margin:0 0 28px;font-size:15px}
+  .hero{display:block;background:linear-gradient(135deg,#238636,#2ea043);color:#fff;
+        text-decoration:none;text-align:center;padding:22px 20px;border-radius:12px;
+        font-size:19px;font-weight:650;margin:0 0 8px;
+        box-shadow:0 8px 24px rgba(46,160,67,.25);transition:transform .12s}
+  .hero:hover{transform:translateY(-2px)}
+  .hero small{display:block;font-weight:400;font-size:13px;opacity:.9;margin-top:6px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 26px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .file{display:flex;justify-content:space-between;align-items:center;gap:12px;
+        background:var(--card);border:1px solid var(--bd);border-radius:9px;padding:12px 14px;
+        text-decoration:none;color:var(--tx);font-size:14px;transition:border-color .12s}
+  .file:hover{border-color:var(--acc2)}
+  .file b{font-weight:600}
+  .file span{color:var(--mut);font-size:12px;white-space:nowrap}
+  .file.primary{border-color:var(--acc);background:#12261a}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);
+     margin:32px 0 12px;font-weight:600}
+  ol{padding-left:22px;margin:0}
+  ol li{margin:10px 0}
+  code{background:#21262d;padding:2px 6px;border-radius:5px;font-size:13.5px;
+       font-family:ui-monospace,Consolas,monospace}
+  .note{background:#1c2128;border-left:3px solid #d29922;padding:12px 16px;
+        border-radius:0 8px 8px 0;margin:22px 0;font-size:14px;color:#d0d7de}
+  .ok{color:var(--acc);font-weight:600}
+</style>
+<div class="wrap">
+  <h1>Analiza video - pachet complet</h1>
+  <p class="sub">26 nov 2026 · 12 fisiere · 23 KB · testat pe Windows real</p>
+
+  <a class="hero" href="PACHET-VIDEO-ANALIZA.zip" download>
+    ⬇ Descarca tot (ZIP, 23 KB)
+    <small>o singura aplicatie: RULEAZA.bat</small>
+  </a>
+
+  <h2>sau fisierele separat</h2>
+  <div class="grid">
+    <a class="file primary" href="RULEAZA.bat" download><b>RULEAZA.bat</b><span>ASTA RULEZI</span></a>
+    <a class="file" href="ANALIZA.py" download><b>ANALIZA.py</b><span>inima aplicatiei (isi instaleaza tot)</span></a>
+    <a class="file" href="DIAGNOZA.bat" download><b>DIAGNOZA.bat</b><span>daca pica</span></a>
+    <a class="file" href="TUTORIAL-PENTRU-PROSTI.md" download><b>Tutorial</b><span>pas cu pas</span></a>
+  </div>
+
+  <div class="note">
+    <b>Windows te intreaba ceva la primul .bat?</b><br>
+    Click dreapta pe ZIP &rarr; <b>Properties</b> &rarr; bifa <b>Unblock</b> &rarr; <b>OK</b>, apoi dezarhivezi.
+  </div>
+
+  <h2>ce faci, in 6 pasi</h2>
+  <p class="sub"><b>Merge din orice disc:</b> D:\video, C:\VIDEO, E:\orice - codul ia folderul unde e bat-ul.</p>
+  <ol>
+    <li>Descarca ZIP-ul (butonul verde)</li>
+    <li>Click dreapta pe ZIP &rarr; <b>Properties</b> &rarr; <b>Unblock</b> &rarr; OK</li>
+    <li>Click dreapta &rarr; <b>Extract All</b> &rarr; scrie <code>D:\video</code></li>
+    <li>Intra in folder &rarr; dublu-click pe <b>RULEAZA.bat</b></li>
+    <li>Lipeste linkul YouTube &rarr; <b>Enter</b></li>
+    <li>Asteapta 10-20 min &rarr; se deschide raportul</li>
+  </ol>
+
+  <h2>ce iese</h2>
+  <ol>
+    <li><code>VIDEO-raport.html</code> - timeline cu toate planurile, taieturi, ritm</li>
+    <li><code>VIDEO.xml</code> - importi in FilmCraft: <b>File &rarr; Import</b></li>
+    <li><code>report.html</code> - descompunerea shot cu shot (filmat / AI / 3D / cod)</li>
+    <li><code>VIDEO.edl</code> - il importi in Premiere sau DaVinci Resolve</li>
+  </ol>
+
+  <p class="sub" style="margin-top:28px">
+    <span class="ok">&#10003;</span> testat pe Windows real (GitHub Actions, PATH golit) - <b>8/8 fisiere produse, exit 0</b><br>
+    Instalarea isi face singura tot in <code>%LOCALAPPDATA%\AnalizaVideo\</code> - o singura data.<br>
+    <span class="ok">&#10003;</span> fara winget &middot; fara Microsoft Store &middot; fara sa instalezi tu nimic
+  </p>
+</div>
+</html>

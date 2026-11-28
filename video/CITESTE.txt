@@ -1,0 +1,47 @@
+INSPECTEAZA UN VIDEO - ce e in el si cum a fost facut
+======================================================
+
+PASUL 1  Instaleaza Python (o singura data)
+   Deschide PowerShell si scrie:
+        winget install Python.Python.3.12
+
+PASUL 2  ffmpeg se instaleaza singur la prima rulare.
+
+PASUL 3  Pune video-ul in folderul asta, langa PORNESTE.bat.
+         Dublu-click pe PORNESTE.bat.
+
+GATA. Iti apare un raport HTML cu timeline colorat.
+
+
+SAU, si mai simplu:
+   Trage fisierul .mp4 direct peste PORNESTE.bat.
+
+
+CE ITI ARATA
+------------
+  1. Metadate   - codec, bitrate, fps, rezolutie, encoder
+  2. Taieturi   - fiecare schimbare de plan, cu timp exact
+  3. Ritm       - taieturi pe minut, plan mediu/scurt/lung
+  4. Culoare    - culoarea dominanta a fiecarui plan
+  5. Lumina     - cat de luminos e fiecare plan (0-255)
+  6. Audio      - volum mediu, max, pauze peste 1 s
+  7. RAPORT HTML - timeline vizual, se deschide in browser
+
+
+COMENZI MANUALE (daca vrei control)
+-----------------------------------
+  python inspecteaza.py video.mp4
+  python inspecteaza.py video.mp4 --prag 0.2      (mai sensibil)
+  python inspecteaza.py video.mp4 --fara-html     (doar in consola)
+
+
+CE NU POATE FACE (si de ce)
+---------------------------
+  - NU reface timeline-ul din Premiere. Exportul e "strans", nu arhiva.
+  - NU vede cross dissolves si fade-uri (ffmpeg foloseste diferenta de lumina).
+  - NU spune ce muzica e. Doar BPM, daca vrei - vezi mai jos.
+
+  Pentru analiza avansata (efecte, zoom, beat, OCR pe text):
+     https://github.com/Pranav-Conova/video-reverse-engineer
+     pip install -e .
+     editast analyze "LINK_YOUTUBE"
